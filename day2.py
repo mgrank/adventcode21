@@ -1,0 +1,16 @@
+forw = 0
+depth = 0
+
+with open("day2.txt", "r") as f:
+  for line in f:
+    if line[0] == "f":
+      movement = int(line[7:])
+      forw += movement
+    elif line[0] == "u":
+      movement = int(line[2:])
+      depth -= movement
+    elif line[0] == "d":
+      movement = int(line[4:])
+      depth += movement
+
+print(forw * depth)
